@@ -1,0 +1,182 @@
+/*
+ * Copyright (C) 2018 - present Juergen Zimmermann, Hochschule Karlsruhe
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package de.hska.lieferant.config.dev
+
+import de.hska.lieferant.entity.LieferzeitType
+import de.hska.lieferant.entity.Lieferant
+import de.hska.lieferant.entity.Kondition
+import de.hska.lieferant.entity.Adresse
+import de.hska.lieferant.entity.FamilienstandType
+import de.hska.lieferant.entity.GeschlechtType
+import de.hska.lieferant.entity.InteresseType
+import de.hska.lieferant.entity.Umsatz
+import reactor.core.publisher.Flux
+import java.math.BigDecimal
+import java.net.URL
+import java.time.LocalDate
+import java.util.Currency
+
+/**
+ * Testdaten für Lieferantn
+ *
+ * @author [Jürgen Zimmermann](mailto:Juergen.Zimmermann@HS-Karlsruhe.de)
+ */
+@SuppressWarnings("MagicNumber")
+val lieferantn = Flux.just(
+        Lieferant(
+                id = "00000000-0000-0000-0000-000000000000",
+                nachname = "Meier",
+                telefonnummer = "01776255444",
+                email = "Meier@hska.de",
+                kategorie = 0,
+                newsletter = true,
+                geburtsdatum = LocalDate.of(2018, 1, 31),
+                umsatz = Umsatz(BigDecimal("0"),
+                        Currency.getInstance("EUR")),
+                kondition = Kondition(BigDecimal("3"), BigDecimal("5"), BigDecimal("0"),
+                        Currency.getInstance("EUR")),
+                homepage = URL("https://www.hska.de"),
+                geschlecht = GeschlechtType.build("W"),
+                lieferzeit = LieferzeitType.build("L"),
+                familienstand = FamilienstandType.build("VH"),
+                interessen = listOf(InteresseType.build("L")!!),
+                adresse = Adresse("00000", "Aachen"),
+                username = "admin"
+        ),
+        Lieferant(
+                id = "00000000-0000-0000-0000-000000000001",
+                nachname = "Fischer",
+                telefonnummer = "001-212-324-4152",
+                email = "Fischer@hska.edu",
+                kategorie = 1,
+                newsletter = true,
+                geburtsdatum = LocalDate.of(2018, 1, 1),
+                umsatz = Umsatz(BigDecimal("10"),
+                        Currency.getInstance("USD")),
+                kondition = Kondition(BigDecimal("2"), BigDecimal("10"), BigDecimal("3"),
+                        Currency.getInstance("USD")),
+                homepage = URL("https://www.hska.edu"),
+                geschlecht = GeschlechtType.build("M"),
+                lieferzeit = LieferzeitType.build("ML"),
+                familienstand = FamilienstandType.build("L"),
+                interessen = listOf(
+                        InteresseType.build("S")!!,
+                        InteresseType.build("L")!!),
+                adresse = Adresse("11111", "Augsburg"),
+                username = "fier"
+        ),
+        Lieferant(
+                id = "00000000-0000-0000-0000-000000000002",
+                nachname = "Wagner",
+                telefonnummer = "041 829 50 50 ",
+                email = "Wagner@hska.ch",
+                kategorie = 2,
+                newsletter = true,
+                geburtsdatum = LocalDate.of(2018, 1, 2),
+                umsatz = Umsatz(BigDecimal("20"),
+                        Currency.getInstance("CHF")),
+                kondition = Kondition(BigDecimal("6"), BigDecimal("15"), BigDecimal("5"),
+                        Currency.getInstance("CHF")),
+                homepage = URL("https://www.hska.ch"),
+                geschlecht = GeschlechtType.build("W"),
+                lieferzeit = LieferzeitType.build("K"),
+                familienstand = FamilienstandType.build("G"),
+                interessen = listOf(
+                        InteresseType.build("S")!!,
+                        InteresseType.build("R")!!),
+                adresse = Adresse("22222", "Aalen"),
+                username = "waer"
+        ),
+        Lieferant(
+                id = "00000000-0000-0000-0000-000000000003",
+                nachname = "Koch",
+                telefonnummer = "06861 45 98 03 ",
+                email = "Koch@hska.uk",
+                kategorie = 3,
+                newsletter = true,
+                geburtsdatum = LocalDate.of(2018, 1, 3),
+                umsatz = Umsatz(BigDecimal("30"),
+                        Currency.getInstance("GBP")),
+                kondition = Kondition(BigDecimal("3"), BigDecimal("5"), BigDecimal("10"),
+                        Currency.getInstance("GBP")),
+                homepage = URL("https://www.hska.uk"),
+                geschlecht = GeschlechtType.build("M"),
+                lieferzeit = LieferzeitType.build("K"),
+                familienstand = FamilienstandType.build("VW"),
+                interessen = listOf(
+                        InteresseType.build("L")!!,
+                        InteresseType.build("R")!!),
+                adresse = Adresse("33333", "Ahlen"),
+                username = "koch"
+        ),
+        Lieferant(
+                id = "00000000-0000-0000-0000-000000000004",
+                nachname = "Bauer",
+                telefonnummer = "018925444",
+                email = "Bauer@hska.jp",
+                kategorie = 4,
+                newsletter = true,
+                geburtsdatum = LocalDate.of(2018, 1, 4),
+                umsatz = Umsatz(BigDecimal("40"),
+                        Currency.getInstance("JPY")),
+                kondition = Kondition(BigDecimal("2"), BigDecimal("20"), BigDecimal("5"),
+                        Currency.getInstance("JPY")),
+                homepage = URL("https://www.hska.jp"),
+                geschlecht = GeschlechtType.build("W"),
+                lieferzeit = null,
+                familienstand = FamilienstandType.build("VH"),
+                interessen = null,
+                adresse = Adresse("44444", "Dortmund"),
+                username = "baer"
+        ),
+        Lieferant(
+                id = "00000000-0000-0000-0000-000000000005",
+                nachname = "Schwarz",
+                telefonnummer = "041 929 30 20",
+                email = "Schwarz@hska.cn",
+                kategorie = 5,
+                newsletter = true,
+                geburtsdatum = LocalDate.of(2018, 1, 5),
+                umsatz = null,
+                kondition = null,
+                homepage = URL("https://www.hska.cn"),
+                geschlecht = GeschlechtType.build("M"),
+                lieferzeit = LieferzeitType.build("K"),
+                familienstand = FamilienstandType.build("L"),
+                interessen = null,
+                adresse = Adresse("55555", "Essen"),
+                username = "scrz"
+        ),
+        Lieferant(
+                id = "00000000-0000-0000-0000-000000000006",
+                nachname = "Winfried",
+                telefonnummer = "064 799 40 20",
+                email = "Winfried@hska.cn",
+                kategorie = 6,
+                newsletter = true,
+                geburtsdatum = LocalDate.of(2018, 1, 6),
+                umsatz = null,
+                kondition = null,
+                homepage = URL("https://www.hska.cn"),
+                geschlecht = GeschlechtType.build("M"),
+                lieferzeit = LieferzeitType.build("ML"),
+                familienstand = FamilienstandType.build("L"),
+                interessen = null,
+                adresse = Adresse("66666", "Freiburg"),
+                username = "wied"
+        )
+)

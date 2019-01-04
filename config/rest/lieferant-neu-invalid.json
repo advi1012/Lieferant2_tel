@@ -1,0 +1,28 @@
+{
+    "nachname": "Test2",
+    "email": "?!$",
+    "kategorie" : 11,
+    "newsletter": true,
+    "geburtsdatum": "2018-01-31",
+    "umsatz": {
+        "betrag": 0,
+        "waehrung": "EUR"
+    },
+    "kondition": null,
+    "homepage": "https://www.test.de",
+    "geschlecht": "W",
+    "lieferzeit": null,
+    "familienstand": "L",
+    "interessen": [
+        "R",
+        "L"
+    ],
+    "adresse": {
+        "plz": "1234",
+        "ort": "Testort"
+    },
+    "user": {
+        "username": "test",
+        "password": "p"
+    }
+}
